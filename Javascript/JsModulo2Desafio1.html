@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 1</title>
+</head>
+
+<body>
+    <div id="app">
+        <button class='botao'>Clique aqui para criar um quadrado vermelho</button>
+    </div>
+
+    <script>
+        // Função em Js dentro de Script
+        //    Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+        //    vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+        //    aparecer na tela.
+        /*
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'facebook.com.br');
+        linkElement.setAttribute('title', 'Facebook');
+
+        var textElement = document.createTextNode('Acessar Facebook');
+        linkElement.appendChild(textElement);
+        */
+        var divElement = document.querySelector('div#app');
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function () {
+            boxElement();
+            //alert ("Botão clicado");
+        }
+
+        var boxElement = function() { 
+            var enter = document.createElement('br');
+            divElement.appendChild(enter);
+            var caixa = document.createElement('div');
+            caixa.style.width = 100;
+            caixa.style.height = 100;
+            caixa.style.backgroundColor = '#F00';
+            divElement.appendChild(caixa);
+        }
+    </script>
+</body>
+
+</html>

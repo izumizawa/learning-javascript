@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 4</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Nomes</h1>
+    </div>
+
+    <script>
+        // Função em Js dentro de Script
+        //    Preencha uma lista (<ul>) no HTML
+        // Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir
+        //        <input type="text" name="nome">
+        //        <button onClick="adicionar()">Adicionar</button>
+        // Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+        //    nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+        //    demais itens anteriores.Além disso, o conteúdo do input deve ser apagado após o clique.
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var divElement = document.querySelector('div#app');
+        var listElement = document.createElement('ul');
+        divElement.appendChild(listElement);
+
+        function createList(nomes) {
+            lista = document.querySelector('ul');
+            for (let i = 0; i < nomes.length; i++) {
+                var singleElement = document.createElement('li');
+                var textElement = document.createTextNode(nomes[i]);
+                singleElement.appendChild(textElement);
+                listElement.appendChild(singleElement);
+            }
+        }
+        createList(nomes);
+
+        // Adicionar input
+        var inputElement = document.createElement('input');
+        inputElement.type = "text";
+        inputElement.name = "nome";
+        divElement.appendChild(inputElement);
+        // Adicionar botao
+        var btnElement = document.createElement('button');
+        botaoElement = document.createTextNode('Adicionar');
+        btnElement.appendChild(botaoElement);
+        divElement.appendChild(btnElement);
+
+        btnElement.onclick = function adicionar() {
+            var pessoa = document.querySelector('input[type=text]').value;
+            var singleElement = document.createElement('li');
+            var textElement = document.createTextNode(pessoa);
+            singleElement.appendChild(textElement);
+            listElement.appendChild(singleElement);
+            inputElement.value = null;            
+        }
+
+    </script>
+</body>
+
+</html>

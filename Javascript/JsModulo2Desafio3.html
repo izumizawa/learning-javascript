@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 3</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Nomes</h1>
+    </div>
+
+    <script>
+        // Função em Js dentro de Script
+        //    Preencha uma lista (<ul>) no HTML
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var divElement = document.querySelector('div#app');
+        var listElement = document.createElement('ul');
+        divElement.appendChild(listElement);
+
+        function createList(nomes) {
+            lista = document.querySelector('ul');
+            for (let i = 0; i < nomes.length; i++) {
+                var singleElement = document.createElement('li');
+                var textElement = document.createTextNode(nomes[i]);
+                singleElement.appendChild(textElement);
+                listElement.appendChild(singleElement);
+            }
+        }
+        createList(nomes);
+
+    </script>
+</body>
+
+</html>
